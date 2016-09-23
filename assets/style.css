@@ -1,0 +1,27 @@
+.form-errors {
+  color: red;
+  margin: 0 auto;
+}
+
+.react-layout-components--box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.form {
+  background-color: #F5F5DC;
+  text-align: center;
+
+}
+.username,
+.password,
+.submit-button {
+  display: block;
+  margin: 0 auto;
+}
+.form-section,
+.form-submit {
+  padding: 1em;
+}
