@@ -4,7 +4,8 @@
   "description": "nutrition and workout app",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "mocha-webpack --watch"
+    "test": "mocha-webpack --watch",
+    "start": "webpack-dev-server --progress --colors --content-base src --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -43,9 +44,12 @@
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.14.0",
     "copy-webpack-plugin": "^3.0.1",
+    "es6-promise": "^3.3.1",
     "html-webpack-plugin": "^2.22.0",
     "html-webpack-template": "^5.2.0",
     "jsdom": "^9.5.0",
+    "react-layout-components": "^3.0.1",
+    "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "sinon": "^1.17.6",
     "webpack-dev-server": "^1.16.1",
