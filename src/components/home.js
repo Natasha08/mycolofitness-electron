@@ -1,13 +1,13 @@
-import Box from 'react-layout-components';
+let title = 'Login'
 
 export default React.createClass({
-  componentDidMount: function() {
-
-  },
   getInitialState: function() {
     return {
       errors: []
     }
+  },
+  changeTitle: function(title) {
+    this.setState({title})
   },
   submit: function() {
     let username = this.refs.username;
@@ -24,7 +24,9 @@ export default React.createClass({
   },
   render: function() {
     return(
+
       <div className='form'>
+        <h1>{ title }</h1>
         <div className='form-section'>
           <label className='form-label'>Username</label>
           <input className='username' ref='username' />
