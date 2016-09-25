@@ -1,6 +1,6 @@
 "use strict"
 
-import { Link, browserHistory } from "react-router";
+import { Link, hasHistory } from "react-router";
 import store from 'store';
 
 let title = 'MyColoFitness';

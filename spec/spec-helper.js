@@ -9,7 +9,7 @@ import app from 'ampersand-app';
 import chai from 'chai';
 // import chaiEnzyme from 'chai-enzyme'
 import sinon from 'sinon';
-// import sinonChai from 'sinon-chai'
+import sinonChai from 'sinon-chai'
 import _ from 'lodash';
 import xhr from 'xhr';
 
@@ -33,7 +33,7 @@ global.navigator = {
 
 // chai config
 // chai.use(chaiEnzyme());
-// chai.use(sinonChai);
+chai.use(sinonChai);
 
 global.chai = chai;
 global.expect = chai.expect;
