@@ -39,7 +39,7 @@ export default React.createClass({
   render: function() {
     return(
 
-      <div className='form'>
+      <div className='form wrapper'>
         <h1>{ title }</h1>
         <div className='form-section'>
           <label className='form-label'>Username</label>

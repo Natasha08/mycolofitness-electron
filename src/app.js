@@ -8,7 +8,6 @@ import Egym from 'pages/egym';
 import Efridge from 'pages/efridge';
 import Home from 'components/home';
 import Login from 'components/login';
-require('../assets/style.css');
 
 const app = document.getElementById('app');
 

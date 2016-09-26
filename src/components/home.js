@@ -14,7 +14,7 @@ export default React.createClass({
   render: function() {
     return(
 
-      <div>
+      <div className="wrapper">
         Home
         <Link to="/login">Login</Link>
       </div>

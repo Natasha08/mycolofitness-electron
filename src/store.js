@@ -9,7 +9,4 @@ const rootReducer = (state = {}, action) => {
 
 let store = Redux.createStore(rootReducer, window.devToolsExtension && window.devToolsExtension());
 
-// store.subscribe(() => {
-// 	console.log("store changed", store.getState());
-// })
 export default store;
