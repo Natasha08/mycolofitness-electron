@@ -2,8 +2,8 @@
 
 import { Link, hasHistory } from "react-router";
 import store from 'store';
-
-let title = 'MyColoFitness';
+import Footer from 'components/footer';
+let title = "MyColoFitness";
 
 export default React.createClass({
   getDefaultProps: function() {
@@ -22,6 +22,7 @@ export default React.createClass({
       <div>
         <h1>{ title }</h1>
         { this.props.children }
+        <Footer />
       </div>
 	  );
 	}
