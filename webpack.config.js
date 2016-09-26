@@ -1,62 +1,40 @@
 const path = require('path');
+var webpack = require('webpack');
+var debug = process.env.Node_ENV !== "production";
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
-
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'app.js'),
-  output: {
-    path: __dirname + '/build',
-    filename: 'app.js'
-  },
-  plugins: [
-    //provides variables by default to all modules
-    new webpack.ProvidePlugin({
-      'React': 'react',
-      'ReactDom': 'react-dom',
-      'Redux': 'redux'
-    }),
+    // devtool: debug ? "inline-sourcemap": null,
+    entry: path.join(__dirname, 'src', 'app.js'),
+    output: {
+        path: __dirname + '/src',
+        filename: "bundle.js"
+    } ,
 
-    // combined with 'html-webpack-template' below, creates a default html document.
-    new HtmlWebpackPlugin({
-      // Required
-      inject: false,
-      template: require('html-webpack-template'),
-      //template: 'node_modules/html-webpack-template/index.ejs',
+    plugins: [
+      new webpack.ProvidePlugin({
+        'React': 'react',
+        'ReactDom': 'react-dom',
+        'Redux': 'redux'
+      })
+    ],
+    module: {
+        loaders: [
+            { test: /\.css$/, loader: "style!css" },
+            {
+                test: /\.js?$/,
+                exclude: /(node_modules)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'es2015'],
+                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy', 'transform-react-jsx']
+                }
+            }
+        ]
+    },
 
-      // Optional
-      appMountId: 'app'
-      // and any other config options from html-webpack-plugin
-      // https://github.com/ampedandwired/html-webpack-plugin#configuration
-    }),
-    new CopyWebpackPlugin([
-      {
-        context: path.join(__dirname, 'assets'),
-        from: '**/*',
-        to: path.join(__dirname, 'build', 'assets')
-      }
-    ])
-  ],
-  module: {
-    loaders: [
-      {
-        test: /(\.scss|\.sass|\.css)$/,
-        loaders: ["style", "css?sourceMap"]
-      },
-
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-        query: {
-          presets: ['es2015', 'stage-0', 'react'],
-          plugins: ['transform-react-jsx']
-        }
-      }
-    ]
-  },
-  resolve: {
-    root: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')]
-  }
-}
+    resolve: {
+      root: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'src/lib'), path.resolve(__dirname, 'node_modules')]
+    }
+};

@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100vh;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+footer {
+	height: 155px; /* '.push' must be the same height as 'footer' */
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	padding-top: 3%;
+	background-color: #6a877b;
+}
+
+.form-errors {
+  color: red;
+  margin: 0 auto;
+}
+
+.form {
+  background-color: #F5F5DC;
+  text-align: center;
+
+}
+.email,
+.password,
+.submit-button {
+  display: block;
+  margin: 0 auto;
+}
+.form-section,
+.form-submit {
+  padding: 1em;
+}
+
+.social-icon {
+  height: auto;
+  width: 5%;
+}
+@media only screen and (max-width: 600px) {
+  .social-icon {
+    height: auto;
+    width: 7%;
+  }
+}
