@@ -1,20 +1,11 @@
 import xhr from 'xhr';
 import { hashHistory } from 'react-router';
 
-const url = "http://localhost:3000/login";
-function formatParams( params ) {
-  return "?" + Object
-    .keys(params)
-    .map(function(key){
-      return key+"="+params[key]
-    })
-    .join("&")
-  };
   export default {
-  login: function(loginParams) {
+  login: function({ email, password }) {
     return new Promise(function(resolve, reject) {
-      xhr(url+formatParams(loginParams), {
-        method: 'POST' }, function(err, resp, body ) {
+      xhr(`http://localhost:3000/login?email=${email}&password=${password}`,
+      { method: 'POST' }, function(err, resp, body ) {
           if (resp.statusCode === 401) {
             let errors = [];
             errors.push('Sorry, your login was unsuccessful');
