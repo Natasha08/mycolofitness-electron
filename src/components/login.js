@@ -38,22 +38,23 @@ export default React.createClass({
   },
   render: function() {
     return(
-
-      <div className='form wrapper'>
-        <h1>{ title }</h1>
-        <div className='form-section'>
-          <label className='form-label'>Username</label>
-          <input className='email' ref='email' />
-        </div>
-        <div className='form-section'>
-          <label className='form-label'>Password</label>
-          <input className='password' ref= 'password' />
-        </div>
-        <div className='form-submit'>
-          <button className='submit-button' onClick={ this.submit }>Submit</button>
-        </div>
-        <div className='form-section'>
-          <div className='form-errors'>{ this.state.errors }</div>
+      <div className='wrapper'>
+        <div className='form'>
+          <h1>{ title }</h1>
+          <div className='form-section'>
+            <label className='form-label'>Username</label>
+            <input className='email' ref='email' />
+          </div>
+          <div className='form-section'>
+            <label className='form-label'>Password</label>
+            <input className='password' ref= 'password' />
+          </div>
+          <div className='form-submit'>
+            <button className='submit-button' onClick={ this.submit }>Login</button>
+          </div>
+          <div className='form-section'>
+            <div className='form-errors'>{ this.state.errors }</div>
+          </div>
         </div>
       </div>
     );
