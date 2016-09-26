@@ -1,3 +1,6 @@
+/******************
+		Main Styles
+******************/
 * {
 	margin: 0;
 }
@@ -6,21 +9,26 @@ html, body {
 	height: 100%;
 }
 
+body {
+	background-image: url("../images/healthy.jpg");
+	z-index: -3;
+	height: 100vh;
+	background-size: cover;
+}
 .wrapper {
 	min-height: 100vh;
 	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+	display: transparent;
 }
 
-footer {
-	height: 155px; /* '.push' must be the same height as 'footer' */
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	padding-top: 3%;
-	background-color: #6a877b;
+p.instruct {
+	background-color: white;
+	padding: 10px;
+	display: inline-block;
 }
-
+/******************
+				Form
+******************/
 .form-errors {
   color: red;
   margin: 0 auto;
@@ -29,6 +37,8 @@ footer {
 .form {
   background-color: #F5F5DC;
   text-align: center;
+	width: 50%;
+	margin: auto;
 
 }
 .email,
@@ -41,7 +51,45 @@ footer {
 .form-submit {
   padding: 1em;
 }
+/******************
+			Buttons
+******************/
 
+button {
+	color: #fff;
+	text-shadow: -2px 2px #6a8782;
+	background-color: #6a877b;
+	box-shadow: inset 0 0 0 1px #27496d;
+	border: none;
+	border-radius: 15px;
+	width: 15%;
+	height: 5%;
+}
+button:hover,
+button.hover {
+  box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+}
+
+button:active,
+button.active,
+button:focus,
+button.focus {
+  box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
+}
+
+/******************
+			Footer
+******************/
+
+footer {
+	height: 155px; /* '.push' must be the same height as 'footer' */
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	padding-top: 3%;
+	background-color: #6a877b;
+}
 .social-icon {
   height: auto;
   width: 5%;
