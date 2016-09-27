@@ -1,7 +1,7 @@
 import egymRepository from 'repositories/egym';
 import xhr from 'xhr';
 
-describe.only('Egym Repository', function() {
+describe('Egym Repository', function() {
   it('fetches workouts', function() {
     const data = [
       { workout_day: 'A', key_lift_1: { name: 'chinups', weight: 'body', reps: '5' }},
