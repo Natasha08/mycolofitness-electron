@@ -1,5 +1,4 @@
 import AuthRepository from 'repositories/auth';
-import axios from 'axios';
 import xhr from 'xhr';
 import store from 'store';
 let title = 'Login'
@@ -13,10 +12,12 @@ export default React.createClass({
   },
   render: function() {
     return(
-
       <div className="wrapper">
         Home
         <Link to="/login">Login</Link>
+        <Link to="/efridge">Efridge</Link>
+        <Link to="/egym">Gym</Link>
+        { this.props.children }
       </div>
     );
   }
