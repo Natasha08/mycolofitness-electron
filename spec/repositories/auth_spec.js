@@ -25,6 +25,7 @@ describe('Auth Repository', function() {
 
     return AuthLogin
      .then(function(data) {
+       console.log(data);
        expect(data).to.equal(result);
     });
 

@@ -32,4 +32,28 @@ describe('Efridge Repository', function() {
 
       this.server.respond();
   });
-});
+  it('posts a food profile', function() {
+    const efridge = {
+      food_name: 'banana',
+      brand: 'chiquata',
+      serving_size: 1,
+      total_calories: 80,
+      fat_grams: 0,
+      carbohydrate_grams: 32,
+      protein_grams: 0,
+      total_grams: 32
+    };
+    const result = efridge;
+    const stub = this.sinon.stub(efridgRepository, 'post').returns(Promise.resolve(result));
+    const xhrSpy = this.sinon.spy(xhr, 'post');
+
+    const postItems = efridgRepository.post({ efridge });
+
+    return postItems
+      .then(function(data) {
+        expect(data).to.equal(result);
+
+      });
+      this.server.respond();
+   });
+  });

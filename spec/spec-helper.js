@@ -69,11 +69,11 @@ afterEach(function() {
   this.sinon.restore();
 });
 
-global.def = function(name, func) {
-  beforeEach(function() {
-    this[name] = func.call(this, this);
-  });
-};
+// global.def = function(name, func) {
+//   beforeEach(function() {
+//     this[name] = func.call(this, this);
+//   });
+// };
 
 var context = require.context('../spec', true, /.+[_.-]spec\.jsx?$/);
 

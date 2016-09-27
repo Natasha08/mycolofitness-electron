@@ -21,5 +21,23 @@ export default {
         }
       })
     })
+  },
+  post: function({ efridge }) {
+    return new Promise(function(resolve, reject) {
+      xhr(`https://localhost:3000/efridge`,
+      { method: 'POST', headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+        }}, function(err, resp, body ) {
+        if (resp.statusCode === 401) {
+          console.log(err);
+        }
+        else if (resp.statusCode === 200 && resp.body) {
+          let workouts = body;
+          console.log(resp);
+          console.log(body);
+        }
+      })
+    })
   }
-};
+}
