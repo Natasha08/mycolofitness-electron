@@ -1,7 +1,8 @@
 export default {
-  fetch: function() {
+  fetch: function(food_items) {
     return {
-      type: 'FETCH_FOOD_ITEMS'
+      type: 'FETCH_FOOD_ITEMS',
+      food_items
     }
   }
 };

@@ -1,5 +1,6 @@
 import xhr from 'xhr';
-
+import store from 'store';
+import efridgeActions from 'actions/efridge';
 export default {
   fetch: function() {
     return new Promise(function(resolve, reject) {
@@ -10,12 +11,12 @@ export default {
       }},
       function(err, resp, body) {
         if (resp.statusCode === 401) {
-          let errors = [];
-          errors.push('Sorry, your login was unsuccessful');
-          return errors;
+          console.log(err);
         }
         else if (resp.statusCode === 200 && resp.body) {
-          console.log("resp", resp);
+          console.log("resp", body);
+          let food_items = body;
+          store.dispatch(efridgeActions.fetch(food_items));
         }
       })
     })

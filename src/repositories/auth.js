@@ -12,7 +12,6 @@ import { hashHistory } from 'react-router';
             return errors;
           }
           else if (resp.statusCode === 200 && resp.body) {
-            console.log("resp", resp);
             hashHistory.push('/home');
           }
         })

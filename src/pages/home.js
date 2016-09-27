@@ -10,6 +10,14 @@ export default React.createClass({
       errors: []
     }
   },
+  componentDidMount: function() {
+    this.unsubscribe = store.subscribe(() => {
+      this.forceUpdate();
+    });
+  },
+  componentWillUnmount: function() {
+    this.unsubscribe();
+  },
   render: function() {
     return(
       <div className="wrapper">

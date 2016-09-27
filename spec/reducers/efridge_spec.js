@@ -1,4 +1,4 @@
-import foodItemsReducer from 'reducers/food_items';
+import foodItemsReducer from 'reducers/efridge';
 
 describe('Efridge Reducer', function() {
   it('adds fetched items to the state', function() {
