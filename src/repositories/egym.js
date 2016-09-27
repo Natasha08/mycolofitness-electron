@@ -1,4 +1,5 @@
 import xhr from 'xhr';
+import egymActions from 'actions/egym';
 
 export default {
   fetch: function() {
@@ -14,6 +15,9 @@ export default {
       }
       else if (resp.statusCode === 200 && resp.body) {
         console.log("resp", body);
+        const workouts = body;
+        store.dispatch(egymActions.fetch(workouts));
+
       }
     })
   })
