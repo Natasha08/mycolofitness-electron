@@ -6,7 +6,7 @@ import store from "store";
 import Layout from "pages/layout";
 import Egym from 'pages/egym';
 import Efridge from 'pages/efridge';
-import Home from 'components/home';
+import Home from 'pages/home';
 import Login from 'components/login';
 
 const app = document.getElementById('app');
@@ -16,11 +16,11 @@ const Routes = React.createClass({
   	<Router history = {hashHistory}>
   	  <Route path= "/" component = {Layout}>
   		  <IndexRoute component = {Home}></IndexRoute>
-  			<Route path = "/home" component = {Home}></Route>
         <Route path = "/login" component = {Login}></Route>
-
-        <Route path = "/egym" component = {Egym}></Route>
-        <Route path = "/efridge" component = {Efridge}></Route>
+  			<Route path = "/home" component = {Home}>
+          <Route path = "/egym" component = {Egym}></Route>
+          <Route path = "/efridge" component = {Efridge}></Route>
+        </Route>
   		</Route>
   	</Router>
   	</Provider>,

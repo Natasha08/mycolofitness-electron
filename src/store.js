@@ -2,11 +2,18 @@
 
 import { applyMiddleware, createStore } from "redux";
 import _ from 'lodash';
+import efridge from 'reducers/efridge';
 
 const rootReducer = (state = {}, action) => {
-  auth: 'To be added'
+  return {
+    food_items: efridge(state.food_items, action)
+  }
 };
 
-let store = Redux.createStore(rootReducer, window.devToolsExtension && window.devToolsExtension());
-
+const store = Redux.createStore(rootReducer);
+global.store = store;
 export default store;
+
+// store.subscribe(() => {
+// 	console.log("store changed", store.getState());
+// })
