@@ -1,7 +1,7 @@
 import efridgRepository from 'repositories/efridge.js';
 import xhr from 'xhr';
 
-describe.only('Efridge Repository', function() {
+describe('Efridge Repository', function() {
   beforeEach(function() {
     this.server = sinon.fakeServer.create();
   });
