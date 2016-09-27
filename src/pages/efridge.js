@@ -21,7 +21,7 @@ export default React.createClass({
   render: function() {
     return(
       <div className="wrapper">
-       <button className='btn-fetch' onClick={ this.fetch }></button>
+       <button className='btn-fetch' onClick={ this.fetch }>Food Items</button>
       </div>
     );
   }

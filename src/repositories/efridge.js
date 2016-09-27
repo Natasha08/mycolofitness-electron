@@ -1,6 +1,7 @@
 import xhr from 'xhr';
 import store from 'store';
 import efridgeActions from 'actions/efridge';
+
 export default {
   fetch: function() {
     return new Promise(function(resolve, reject) {
