@@ -12,7 +12,6 @@ describe('Auth Repository', function() {
   });
   const result = data;
   it('logs the user in',function() {
-    const url = "http://localhost:3000/login";
     const loginParams = { username: 'username', password: 'password'};
     const stub = this.sinon.stub(AuthRepository, 'login').returns(Promise.resolve(result));
     const xhrSpy = this.sinon.spy(xhr, 'post');
