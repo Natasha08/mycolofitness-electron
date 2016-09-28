@@ -5,18 +5,14 @@ import efridgeActions from 'actions/efridge';
 export default {
   fetch: function() {
     return new Promise(function(resolve, reject) {
-      xhr('http://localhost:3000/efridge', { method: 'GET',
-      headers: {
-      Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }},
+      xhr('http://localhost:3000/efridge', { method: 'GET', withCredentials: true},
       function(err, resp, body) {
         if (resp.statusCode === 401) {
           console.log(err);
         }
         else if (resp.statusCode === 200 && resp.body) {
-          console.log("resp", body);
-          let food_items = body;
+          let items = JSON.parse(body);
+          let food_items = items.data;
           store.dispatch(efridgeActions.fetch(food_items));
         }
       })
@@ -24,18 +20,13 @@ export default {
   },
   post: function({ efridge }) {
     return new Promise(function(resolve, reject) {
-      xhr(`https://localhost:3000/efridge`,
-      { method: 'POST', headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-        }}, function(err, resp, body ) {
+      xhr('http://localhost:3000/efridge',
+      { method: 'POST', json: { efridge: efridge }, withCredentials: true}, function(err, resp, body ) {
         if (resp.statusCode === 401) {
-          console.log(err);
         }
-        else if (resp.statusCode === 200 && resp.body) {
-          let workouts = body;
-          console.log(resp);
-          console.log(body);
+        if (resp.statusCode === 200) {
+          let items = JSON.parse(body);
+          let workouts = items.data;
         }
       })
     })

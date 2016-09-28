@@ -14,7 +14,6 @@ export default {
         console.log(err);
       }
       else if (resp.statusCode === 200 && resp.body) {
-        console.log("resp", body);
         const workouts = body;
         store.dispatch(egymActions.fetch(workouts));
 

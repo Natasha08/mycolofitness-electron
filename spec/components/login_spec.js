@@ -5,11 +5,11 @@ import AuthRepository from 'repositories/auth';
 describe('The Login Component', function() {
   context('The Login Form', function() {
     let wrapper = mount(<Login />);
-    it('renders email input', function (){
-      let emailInput = wrapper.find('input.email');
-      emailInput.get(0).value = 'email';
+    it('renders username input', function (){
+      let usernameInput = wrapper.find('input.username');
+      usernameInput.get(0).value = 'username';
 
-      expect(emailInput.get(0).value).to.equal('email');
+      expect(usernameInput.get(0).value).to.equal('username');
     });
     it('renders password input', function (){
       let passWord = wrapper.find('input.password');
@@ -20,14 +20,14 @@ describe('The Login Component', function() {
   });
   context('When the form is not correctly filled out', function() {
     let wrapper = mount(<Login />);
-    it('errors when email is empty', function (){
-      let emailInput = wrapper.find('input.email');
+    it('errors when username is empty', function (){
+      let usernameInput = wrapper.find('input.username');
       let btn = wrapper.find('button.submit-button');
 
-      emailInput.get(0).value = '';
+      usernameInput.get(0).value = '';
       btn.simulate('click');
 
-      expect(wrapper.state().errors).contain('Please enter your email.');
+      expect(wrapper.state().errors).contain('Please enter your username.');
     });
     it('errors when password is empty', function (){
       let passWord = wrapper.find('input.password');
@@ -43,8 +43,8 @@ describe('The Login Component', function() {
     let wrapper = mount(<Login />);
     it('logs a user in', function (){
       const authStub = this.sinon.stub(AuthRepository, 'login').returns(new Promise(_.noop));
-      let emailInput = wrapper.find('input.email');
-      emailInput.get(0).value = 'email';
+      let usernameInput = wrapper.find('input.username');
+      usernameInput.get(0).value = 'username';
 
       let passWord = wrapper.find('input.password');
       passWord.get(0).value = 'password';
@@ -54,7 +54,7 @@ describe('The Login Component', function() {
 
       expect(wrapper.state().errors).deep.equal([]);
       expect(authStub).to.have.been.calledWith({
-        email: 'email', password: 'password'
+        username: 'username', password: 'password'
       });
     });
   });

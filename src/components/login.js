@@ -14,12 +14,12 @@ export default React.createClass({
     this.setState({title})
   },
   submit: function() {
-    let email = this.refs.email;
+    let username = this.refs.username;
     let password = this.refs.password;
 
     let errors = [];
-    if (email.value == '') {
-      errors.push('Please enter your email.');
+    if (username.value == '') {
+      errors.push('Please enter your username.');
     }
     if (password.value == '') {
       errors.push('Please enter your password.');
@@ -30,9 +30,9 @@ export default React.createClass({
     }
   },
   login: function() {
-    const email = this.refs.email.value;
+    const username = this.refs.username.value;
     const password = this.refs.password.value;
-    const loginParams = { email, password };
+    const loginParams = { username, password };
 
     AuthRepository.login(loginParams)
   },
@@ -43,7 +43,7 @@ export default React.createClass({
           <h1>{ title }</h1>
           <div className='form-section'>
             <label className='form-label'>Username</label>
-            <input className='email' ref='email' />
+            <input className='username' ref='username' />
           </div>
           <div className='form-section'>
             <label className='form-label'>Password</label>

@@ -13,6 +13,8 @@ export default React.createClass({
     efridgRepository.fetch()
   },
   submit: function() {
+    let state = store.getState();
+    
     const food_name = this.refs.food_name.value;
     const brand = this.refs.brand.value;
     const serving_size = this.refs.serving_size.value;
@@ -21,10 +23,11 @@ export default React.createClass({
     const carbohydrate_grams = this.refs.carbohydrate_grams.value;
     const protein_grams = this.refs.protein_grams.value;
     const total_grams = this.refs.total_grams.value;
+    const user_id = state.user.user_id;
 
     const efridge = {
       food_name, brand, serving_size, total_calories, fat_grams,
-      carbohydrate_grams, protein_grams, total_grams
+      carbohydrate_grams, protein_grams, total_grams, user_id
      };
 
       efridgRepository.post({ efridge });
