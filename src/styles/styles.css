@@ -59,7 +59,7 @@ button {
 	color: #fff;
 	text-shadow: -2px 2px #6a8782;
 	background-color: #6a877b;
-	box-shadow: inset 0 0 0 1px #27496d;
+	box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
 	border: none;
 	border-radius: 15px;
 	width: 15%;
@@ -67,7 +67,8 @@ button {
 }
 button:hover,
 button.hover {
-  box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+	box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #000;
+
 }
 
 button:active,
