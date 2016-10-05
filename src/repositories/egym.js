@@ -1,10 +1,11 @@
 import xhr from 'xhr';
 import egymActions from 'actions/egym';
+import store from 'store';
 
 export default {
   fetch: function() {
     return new Promise(function(resolve, reject) {
-      xhr('http://localhost:3000/egym', { method: 'GET',
+      xhr('http://localhost:3001/proxy/egym', { method: 'GET',
       headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'

@@ -1,6 +1,6 @@
-export default function(user) {
+export default function(auth) {
   return {
     type: 'SET_USER',
-    user
+    auth
   }
 }

@@ -6,6 +6,6 @@ describe('The Layout Page', function() {
     let wrapper = mount(<Layout />);
     expect(wrapper).to.have.length(1);
     expect(wrapper.text()).to.contain('MyColoFitness');
-    expect(wrapper.text()).not.to.contain('Login');
+    expect(wrapper.text()).to.contain('AuthorMyColoFitness');
   });
 });

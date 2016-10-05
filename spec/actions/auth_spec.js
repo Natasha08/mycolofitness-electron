@@ -3,14 +3,15 @@ import authActions from 'actions/auth.js';
 describe('Auth Actions', function() {
   context('user', function() {
     it('returns a FETCH_FOOD_ITEMS action', function() {
-      const user = {
-        user_id: 1
+      const auth = {
+        token: 'fake_token',
+        user_id: '234'
       };
       const args = {
         type: 'SET_USER',
-        user
+        auth
       };
-      expect(authActions(user)).to.deep.equal(args);
+      expect(authActions(auth)).to.deep.equal(args);
     });
   });
 });

@@ -1,1 +1,2 @@
-# mycolofitness-spa
+# mycolofitness-electron
+Desktop app version of website

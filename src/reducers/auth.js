@@ -1,10 +1,10 @@
 const initialState = {
-  user: {}
+  auth: {}
 };
 
-export default function(state= initialState, { type, user }) {
+export default function(state= initialState, { type, auth }) {
   if (type === 'SET_USER') {
-    return user;
+    return auth;
   }
   return state;
 }

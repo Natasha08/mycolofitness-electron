@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import Login from 'components/login';
+import Login from 'components/login_form';
 import AuthRepository from 'repositories/auth';
 
 describe('The Login Component', function() {
