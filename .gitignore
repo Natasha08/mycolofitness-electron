@@ -4,3 +4,4 @@ extra.*
 .tmp
 application.json
 build/
+/redux_example.js
