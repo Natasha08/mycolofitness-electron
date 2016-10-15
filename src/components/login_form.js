@@ -2,6 +2,7 @@ import AuthRepository from 'repositories/auth';
 import store from 'store';
 import RegisterForm from 'components/register_form';
 import { Link } from 'react-router';
+import Carousel from 'components/carousel';
 
 export default React.createClass({
   getInitialState: function() {
